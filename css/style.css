@@ -1,210 +1,272 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Varela+Round&display=swap");
 
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    list-style: none;
-    text-decoration: none;
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
 }
-:root{
-    --primary-color:#c7c7c7;
-    --sub-color:#7a7979;
-    --third-color:#000; 
+:root {
+  --primary-color: #c7c7c7;
+  --sub-color: #7a7979;
+  --third-color: #000;
 }
-header{
-    background: linear-gradient(45deg, rgba(0,0,0,255), rgba(75,72,66,255));
-    width: 100%;
-    position: fixed;
-    z-index: 100;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 4px;
+header {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 255), rgba(75, 72, 66, 255));
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px;
 }
 
-nav a{
-    color: white;
-    font-weight: 500;
-    padding-left: 30px;
-    transition: 0.5s;
-    text-transform: capitalize;
+.logo {
+  margin-left: 15px;
 }
-nav a:hover{
-    color: #000;
+
+.navigation {
+  margin-right: 15px;
 }
-section{
-    padding: 100px 200px;
+
+nav a {
+  color: white;
+  font-weight: 500;
+  padding-left: 30px;
+  transition: 0.5s;
+  text-transform: capitalize;
 }
-.home{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: url(../images/Ancient_Basin_Palace_Grounds.webp) ;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+nav a:hover {
+  color: #000;
 }
-.home h2{
-    color: var(--sub-color);
-    font-size: 1.4em;
-    font-weight: 500;
-    text-transform: capitalize;
+.toggle_btn {
+  display: none;
 }
-.home h2 span{
-    color: var(--primary-color);
-    font-size: 3em;
-    font-weight: 600;
-    text-transform: capitalize;
-    display: inline-block;
-    margin-top: 10px;
+/* drop down menu */
+
+.dropdown_menu {
+  position: absolute;
+  display: none;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  overflow: hidden;
+  transition: 0.5s ease;
+  height: 0px;
+  border-radius: 15px;
 }
-.home h3{
-    color: var(--primary-color);
-    font-size: 2em;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+
+.dropdown_menu.open {
+  height: 143px;
 }
-.main-button{
-    color:var(--primary-color);
-    background-color: #7a7979;
-    font-size: 1.1em;
-    font-weight: 600px;
-    display: inline-block;
-    padding: 0.9375em 2.1875em;
-    border-radius: 20%;
-    border-radius: 15px;
-    letter-spacing: 1px;
-    margin-bottom: 40px;
-    transition: .7s ease ;
+
+.toggle_btn {
+  display: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
-.main-button:hover{
-    background-color: var(--third-color);
-    transform: scale(1.1);
+
+.dropdown_menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.7rem;
+  color: #000;
+  backdrop-filter: blur(15px);
+  background: #7a797970;
 }
-.social-icons a{
-        color: var(--third-color);
-        font-size: 1.7em;
-        padding-right: 30px;
+
+section {
+  padding: 100px 200px;
 }
-.title{
-    display: flex;
-    justify-content: center;
-    font-size: 2.2em;
-    font-weight: 800;
-    margin-bottom: 30px;
+.home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url(../images/Ancient_Basin_Palace_Grounds.webp);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
-.content-cards{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.home h2 {
+  color: var(--sub-color);
+  font-size: 1.4em;
+  font-weight: 500;
+  text-transform: capitalize;
 }
-.card{
-    background-color:#fff;
-    width: 21.25em;
-    box-shadow: 0px 5px 25px rgba(1,1,1, 15%);
-    border-radius: 10px;
-    padding: 25px;
-    margin: 15px;
-    transition: .7s ease; 
+.home h2 span {
+  color: var(--primary-color);
+  font-size: 3em;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+  margin-top: 10px;
 }
-.card:hover{
-    transform: scale(1.1);
+.home h3 {
+  color: var(--primary-color);
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
-.icon{
-    font-size: 8em;
-    text-align: center;
+.main-button {
+  color: var(--primary-color);
+  background-color: #7a7979;
+  font-size: 1.1em;
+  font-weight: 600px;
+  display: inline-block;
+  padding: 0.9375em 2.1875em;
+  border-radius: 20%;
+  border-radius: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  transition: 0.7s ease;
 }
-.info{
-    text-align: center;
+.main-button:hover {
+  background-color: var(--third-color);
+  transform: scale(1.1);
 }
-.info h3{
-    font-size: 1.2em;
-    font-weight: 700;
-    margin: 10px;
+.social-icons a {
+  color: var(--third-color);
+  font-size: 1.7em;
+  padding-right: 30px;
 }
-.content{
-    background-color: var(--primary-color);
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 2.2em;
+  font-weight: 800;
+  margin-bottom: 30px;
 }
-.content .content-cards{
-    margin-top: 30px;
+.content-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.content-card{
-    background-color: #fff;
-    border: 1px solid #fff;
-    min-height: 14em;
-    width: 23em;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 20px;
-    transition: .7s ease;
+.card {
+  background-color: #fff;
+  width: 21.25em;
+  box-shadow: 0px 5px 25px rgba(1, 1, 1, 15%);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 15px;
+  transition: 0.7s ease;
 }
-.content-card:hover{
-    transform: scale(1.1);
+.card:hover {
+  transform: scale(1.1);
 }
-.content-image img{
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
+.icon {
+  font-size: 8em;
+  text-align: center;
 }
-.content-card:hover .content-image{
-    opacity: .9;
+.info {
+  text-align: center;
 }
-.content-info{
-    padding: 1em;
+.info h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 10px;
 }
-.content-category{
-    font-size: .8em;
+.content {
+  background-color: var(--primary-color);
 }
-.content-title{
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    font-weight: 800;
-    margin-top: 10px;
+.content .content-cards {
+  margin-top: 30px;
+}
+.content-card {
+  background-color: #fff;
+  border: 1px solid #fff;
+  min-height: 14em;
+  width: 23em;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 20px;
+  transition: 0.7s ease;
+}
+.content-card:hover {
+  transform: scale(1.1);
+}
+.content-image img {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+.content-card:hover .content-image {
+  opacity: 0.9;
+}
+.content-info {
+  padding: 1em;
+}
+.content-category {
+  font-size: 0.8em;
+}
+.content-title {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 10px;
 }
 .more-details {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
-.more-details:hover{
-    color: #000;
+.more-details:hover {
+  color: #000;
 }
-.contact .icon{
-    font-size: 4.5em;
-    text-align: center;
+.contact .icon {
+  font-size: 4.5em;
+  text-align: center;
 }
-.footer{
-    background: var(--primary-color);
-    display: flex;
-    justify-content: space-around;
-    padding: 2em;
+.footer {
+  background: var(--primary-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
 }
-.footer-title{
-    font-size: 1.3em;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
+.footer-title {
+  font-size: 1.3em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 
-@media (max-width:1023px){
-    header{
-        padding: 12px 20px;
-    }
-    .navigation a{
-        padding-left: 10px;
-    }
-    .title{
-        font-size: 1.8em;
-    }
-    ::selection{
-        padding: 80px 20px;
-    }
-    .main-content h2{
-        font-size: 1em;
-    }
+@media (max-width: 1024px) {
+  header {
+    padding: 12px 20px;
+  }
+  .navigation {
+    display: none;
+  }
+  .title {
+    font-size: 1.8em;
+  }
+  ::selection {
+    padding: 80px 20px;
+  }
+  .main-content h2 {
+    font-size: 1em;
+  }
+  .dropdown_menu {
+    display: block;
+  }
+  .toggle_btn {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 10px 7px;
+  }
+  .dropdown_menu {
+    left: 2rem;
+    width: unset;
+  }
 }
